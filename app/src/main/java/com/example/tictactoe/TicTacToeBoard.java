@@ -2,6 +2,8 @@ package com.example.tictactoe;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -12,6 +14,10 @@ public class TicTacToeBoard extends View {
     private final int XColor;
     private final int OColor;
     private final int winningLineColor;
+
+    private final Paint paint = new Paint();
+
+    private int cellSize = getWidth()/3;
 
     public TicTacToeBoard(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -33,8 +39,30 @@ public class TicTacToeBoard extends View {
     protected void onMeasure(int width, int height){
         super.onMeasure(width, height);
 
-        int dimensions = Math.min(getMeasuredWidth(), getMeasuredHeight());
+        int dimension = Math.min(getMeasuredWidth(), getMeasuredHeight());
+        cellSize = dimension/3;
 
-        setMeasuredDimension(dimensions, dimensions);
+        setMeasuredDimension(dimension, dimension);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas){
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setAntiAlias(true);
+
+        drawGameBoard(canvas);
+    }
+
+    private void drawGameBoard(Canvas canvas){
+        paint.setColor(boardColor);
+        paint.setStrokeWidth(16);
+
+        for (int c=1; c<3; c++){
+            canvas.drawLine(cellSize*c, 0, cellSize*c, canvas.getWidth(), paint);
+        }
+
+        for (int r=1; r<3; r++){
+            canvas.drawLine(0,cellSize*r, canvas.getWidth(),cellSize*r, paint);
+        }
     }
 }

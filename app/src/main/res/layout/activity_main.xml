@@ -10,19 +10,19 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
+        android:layout_width="123dp"
+        android:layout_height="244dp"
+        android:layout_marginTop="156dp"
         android:lineSpacingExtra="16sp"
         android:text="@string/homeTitle"
+        android:textAlignment="center"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#6A6569"
-        android:textSize="36sp"
+        android:textSize="50sp"
         android:textStyle="bold"
-        android:typeface="sans"
+        android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,13 +30,13 @@
         android:id="@+id/button"
         android:layout_width="125dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="72dp"
         android:background="@drawable/pink_button"
         android:onClick="playButtonClick"
         android:text="@string/playButton"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 </android.support.constraint.ConstraintLayout>

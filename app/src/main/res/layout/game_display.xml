@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--suppress AndroidUnresolvableTag -->
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameDisplay"
-    android:background="#D7CCC8">
+    android:background="#D7CCC8"
+    tools:context=".GameDisplay">
 
 
     <TextView
@@ -21,6 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
@@ -33,6 +36,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:background="@drawable/blue_button"
+            android:onClick="playAgainButtonClick"
             android:text="@string/playAgainButton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,6 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:background="@drawable/red_button"
+            android:onClick="homeButtonClick"
             android:text="@string/homeButton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -52,4 +57,16 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
     </android.support.constraint.ConstraintLayout>
+
+    <com.example.tictactoe.TicTacToeBoard
+        android:id="@+id/ticTacToeBoard2"
+        android:layout_width="417dp"
+        android:layout_height="410dp"
+        android:visibility="visible"
+        custom:boardColor="#000000"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="117dp"
+        tools:visibility="visible" />
+
 </android.support.constraint.ConstraintLayout>
