@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TicTacToe">
         <activity
+            android:name=".GameDisplay"
+            android:exported="false" />
+        <activity
+            android:name=".PlayerSetup"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
