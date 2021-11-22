@@ -9,7 +9,7 @@
 
 ---
 
-### End-of-game screen
+### Players Name screen
 <img src="img/Names-menu.png" width=350>
 
 ---
