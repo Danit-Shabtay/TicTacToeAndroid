@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#D7CCC8">
+    android:background="#000000">
 
 
     <TextView
@@ -18,11 +18,12 @@
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#6A6569"
+        android:textColor="#FFFFFF"
         android:textSize="50sp"
         android:textStyle="bold"
         android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

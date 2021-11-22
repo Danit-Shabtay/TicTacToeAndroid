@@ -9,7 +9,7 @@
 
 ---
 
-### Players Name screen
+### Players name screen
 <img src="img/Names-menu.png" width=350>
 
 ---

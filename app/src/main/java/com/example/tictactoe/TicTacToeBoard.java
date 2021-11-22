@@ -107,7 +107,7 @@ public class TicTacToeBoard extends View {
 
     private void drawGameBoard(Canvas canvas){
         paint.setColor(boardColor);
-        paint.setStrokeWidth(16);
+        paint.setStrokeWidth(25);
 
         for (int c=1; c<3; c++){
             canvas.drawLine(cellSize*c, 0, cellSize*c, canvas.getWidth(), paint);
