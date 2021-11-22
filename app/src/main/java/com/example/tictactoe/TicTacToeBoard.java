@@ -9,6 +9,8 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class TicTacToeBoard extends View {
 
@@ -16,6 +18,8 @@ public class TicTacToeBoard extends View {
     private final int XColor;
     private final int OColor;
     private final int winningLineColor;
+
+    private boolean winningLine = false;
     private final Paint paint = new Paint();
     private final GameLogic game;
     private int cellSize = getWidth()/3;
@@ -72,17 +76,25 @@ public class TicTacToeBoard extends View {
             int row = (int) Math.ceil(y/cellSize);
             int col = (int) Math.ceil(x/cellSize);
 
-            if (game.updateGameBoard(row, col)){
-                invalidate();
+            if (!winningLine){
+                if (game.updateGameBoard(row, col)){
+                    invalidate();
 
-                // Updating the players turn
-                if (game.getPlayer() % 2 == 0){
-                    game.setPlayer(game.getPlayer()-1);
-                }
-                else {
-                    game.setPlayer(game.getPlayer()+1);
+                    if (game.winnerCheck()){
+                        winningLine = true;
+                        invalidate();
+                    }
+
+                    // Updating the players turn
+                    if (game.getPlayer() % 2 == 0){
+                        game.setPlayer(game.getPlayer()-1);
+                    }
+                    else {
+                        game.setPlayer(game.getPlayer()+1);
+                    }
                 }
             }
+
 
             invalidate();
 
@@ -144,6 +156,17 @@ public class TicTacToeBoard extends View {
                         (float) ((col*cellSize + cellSize) - cellSize*0.2),
                         (float) ((row+cellSize + cellSize) - cellSize*0.2),
                         paint);
+    }
 
+    public void setUpGame(Button playAgain, Button home, TextView playerDisplay, String[] names){
+        game.setPlayAgainBTN(playAgain);
+        game.setHomeBTN(home);
+        game.setPlayerTurn(playerDisplay);
+        game.setPlayerNames(names);
+    }
+
+    public void resetGame(){
+        game.resetGame();
+        winningLine = false;
     }
 }
