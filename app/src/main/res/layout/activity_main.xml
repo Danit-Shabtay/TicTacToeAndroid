@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/homePageTitle"
         android:layout_width="123dp"
         android:layout_height="244dp"
         android:layout_marginTop="156dp"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/playBTN"
         android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
@@ -38,5 +38,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/homePageTitle" />
 </android.support.constraint.ConstraintLayout>
