@@ -2,18 +2,13 @@
 
 ---
 
-### Main-menu screen
-<img src="img/Main-menu.png" width=300>
+### Main-menu screens
+<img src="img/Main-menu.png" width=200>
+<img src="img/Names-menu.png" width=200>
 
 ---
-
-### Players name screen
-<img src="img/Names-menu.png" width=300>
-
----
-
 
 ### Demo
-<img src="img/TicTacToe.gif" width=300>
+<img src="img/TicTacToe.gif" width=200>
 
 ---
